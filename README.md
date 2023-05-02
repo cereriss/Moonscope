@@ -4,4 +4,4 @@ Moonscope is a mobile app that provides users with personalized daily horoscopes
 <br>
 [School links](https://iismarconi-my.sharepoint.com/:w:/g/personal/scaravaggi_sofia_04_itisdalmine_edu_it/EeizHFDAG6FNsIPqtwDTJmEBu30Dquzio-6HL_U1uKxbCg?e=DpLFpA)
 <br>
-!(logo)[https://drive.google.com/file/d/1yae8o051Yn8iGaMnUH35Jjj836eizIkB/view?usp=share_link]
+!(logo)[https://drive.google.com/file/d/1yae8o051Yn8iGaMnUH35Jjj836eizIkB/preview]
