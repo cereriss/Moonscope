@@ -42,7 +42,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   height: 80vh;
 
   background: linear-gradient(180deg, #8d70a7 0%, #2a173c 100%);
