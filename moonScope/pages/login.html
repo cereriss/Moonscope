@@ -4,15 +4,61 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/landingpag.css" />
+    <link rel="stylesheet" href="../style/login.css" />
     <title>MoonScope</title>
   </head>
   <body>
+    <!-- Header -->
     <header class="header">
       <div class="logo-box">
-        <img src="./images/logo banner.svg" alt="Logo" class="logo-banner" />
-        <div
+        <img src="../images/logo.png" alt="Logo" class="logo-banner" />
+        <div class="logo-text">Moonscope</div>
       </div>
+        <div class="icons-box"></div>
     </header>
+    
+    <!-- Main -->
+    <div class="title-box">Log-in</div>
+      <div class="form-box">
+        <div class="container_form">
+          <div class="line-box"></div>
+            
+
+            <form action="" method="post">
+
+              <div class="label-box">
+                <label class="label" for="username">Nome</label>  
+                <br /><br />
+                <label class="label" for="password">Password</label>
+                <br /><br />
+              </div>
+
+              <div class="input-box">
+              <input type="text" id="username" name="username" />
+              <br /><br />
+              <input type="password" id="password" name="password" />
+              <br /><br />
+              </div>
+
+          </div>
+          </div>
+          <div class="buttons-grid">
+            <input type="submit" value="Log-in" class="btn-login">
+            <button class="btn-signup">Sign-up</button>
+          </div>
+       </form>
+        <div class="line-box"></div>
+        </div>
+      
+      
+    
+    
+    <!-- Footer -->
+    
+    <footer class="footer"></footer>
+
+
+    <!--scripts-->
+    <script src="../scripts/register_login/login.js"></script>
   </body>
 </html>

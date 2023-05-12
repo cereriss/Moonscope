@@ -1,5 +1,6 @@
 const express = require("express");
 const mysql = require("mysql");
+const bodyParser = require("body-parser");
 
 const app = express();
 const port = 3000;
@@ -11,6 +12,10 @@ const db = mysql.createConnection({
   password: "0987654321",
   database: "moonscope",
 });
+
+// Middleware to parse request bodies
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 //Connect
 db.connect((err) => {

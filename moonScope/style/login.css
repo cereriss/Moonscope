@@ -13,3 +13,203 @@
   --font-size-l: 64px;
   --font-size-xl: 96px;
 }
+
+* {
+  font-family: "Cormorant Garamond";
+  margin: 0;
+  padding: 0;
+  color: var(--white);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+
+  width: 100%;
+  height: 20vh;
+  background: linear-gradient(180deg, #8d70a7 0%, #2a173c 100%);
+}
+
+.logo-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+  font-weight: 600;
+  font-size: var(--font-size-l);
+
+  padding-left: 5%;
+  width: 45%;
+}
+
+.icons-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  width: 50%;
+}
+
+.title-box {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+
+  font-family: "Cormorant Garamond";
+  font-size: var(--font-size-xl);
+  color: var(--white);
+
+  background-color: var(--violaScuro);
+}
+
+.form-box {
+  background-color: var(--violaScuro);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  width: 100%;
+  height: 70vh;
+
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+}
+
+.container_form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.line-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 1px;
+  height: 100%;
+  background-color: white;
+}
+
+.label-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.label {
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 300;
+  font-size: var(--font-size-m);
+  text-align: center;
+  color: var(--white);
+  font-weight: 300;
+}
+
+input[type="text"],
+[type="password"] {
+  box-sizing: border-box;
+
+  position: relative;
+
+  background: var(--violaScuro);
+  border-top: none;
+  border-left: var(--violaScuro);
+  border-right: var(--violaScuro);
+
+  border-bottom: 1px solid white;
+  border-radius: 36px;
+}
+
+.buttons-grid {
+  padding: 44px 424px;
+  gap: 26px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--violaScuro);
+}
+
+.btn-login {
+  border: 0;
+  background-color: var(--violaScuro);
+  color: var(--white);
+  position: relative;
+  cursor: pointer;
+  font-family: "Cormorant Garamond";
+  font-size: var(--font-size-s);
+  font-weight: 600;
+  text-align: center;
+  border-radius: 36px;
+  height: 7vh;
+  width: 20vw;
+  filter: drop-shadow(0px 6px 24px rgba(255, 255, 255, 0.25));
+}
+
+.btn-login:hover {
+  box-shadow: 0px 0px 20px 3px rgba(255, 255, 255, 0.5);
+}
+
+.btn-signup {
+  border: 0;
+  background-color: var(--violetto);
+  color: var(--white);
+  position: relative;
+  cursor: pointer;
+  font-family: "Cormorant Garamond";
+  font-size: var(--font-size-s);
+  font-weight: 600;
+  text-align: center;
+  border-radius: 36px;
+  height: 7vh;
+  width: 20vw;
+  filter: drop-shadow(0px 6px 24px #000000);
+}
+
+.btn-signup:hover {
+  box-shadow: 0px 0px 20px 3px black;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+
+  width: 100%;
+  height: 20vh;
+
+  background: linear-gradient(180deg, #2a173c 23.98%, #000000 100%);
+  background-blend-mode: saturation;
+}
