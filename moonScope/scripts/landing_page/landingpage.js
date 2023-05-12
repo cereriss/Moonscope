@@ -12,3 +12,9 @@ setInterval(function () {
 
   button.style.boxShadow = `0px 0px ${glowIntensity}px 3px rgba(255, 255, 255, 0.5)`;
 }, 200);
+
+function getStarted() {
+  window.location.href = "pages/login.html";
+}
+
+button.addEventListener("click", getStarted);
