@@ -78,7 +78,7 @@
   position: relative;
 
   width: 100%;
-  height: 70vh;
+  height: 60vh;
 
   flex: none;
   order: 2;
@@ -93,22 +93,33 @@
   position: relative;
 }
 
-form {
+.form-grid {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  width: 90vw;
+  height: 30vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
+
+  width: 80vh;
 }
 
 .line-box {
   display: flex;
-  flex-direction: row;
   justify-content: center;
 
-  width: 1px;
+  width: 100%;
   height: 100%;
-  background-color: white;
 }
 
 .label-box {
@@ -116,6 +127,8 @@ form {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  position: relative;
+  padding-right: 20%;
 }
 
 .input-box {
@@ -148,16 +161,25 @@ input[type="text"],
 
   border-bottom: 1px solid white;
   border-radius: 36px;
+
+  font-family: "Cormorant Garamond";
+  font-style: normal;
+  font-weight: 300;
+  font-size: var(--font-size-m);
+
+  width: 25vw;
 }
 
 .buttons-grid {
-  padding: 44px 424px;
-  gap: 26px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   background-color: var(--violaScuro);
+
+  padding-top: 10%;
+  gap: 10%;
+  width: 100%;
 }
 
 .btn-login {
