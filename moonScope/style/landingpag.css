@@ -85,7 +85,7 @@
 }
 
 .getStartedbtn:hover {
-  box-shadow: 0px 0px 20px 3px rgba(255, 255, 255, 0.5);
+  animation: bottone 0.5s ease-in-out;
 }
 
 .body-B {
@@ -153,4 +153,16 @@ footer {
 
   width: 100%;
   height: 20vh;
+}
+
+@keyframes bottone {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
