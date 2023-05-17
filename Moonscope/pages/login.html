@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon-white.svg" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/x-icon" href="../images/favicon-black.svg" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="../style/login.css" />
+    <title>Moonscope</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-box">
+        <img src="../images/logo.png" alt="Logo" class="logo-banner" />
+        <div class="logo-text">Moonscope</div>
+      </div>
+      <div class="icons-box"></div>
+    </header>
+
+    <!-- Main -->
+    <div class="title-box">Log-in</div>
+
+    <div class="form-box">
+      <div class="container_form">
+        <form action="" method="post">
+          <div class="form-grid">
+            <img class="line-box" src="../images/line.svg" alt="line" />
+            <div class="label-box">
+              <label class="label" for="username">Nome</label>
+              <br /><br /><br /><br />
+              <label class="label" for="password">Password</label>
+              <br /><br /><br /><br />
+            </div>
+
+            <div class="input-box">
+              <input type="text" id="username" name="username" required />
+              <br /><br /><br /><br />
+              <input type="password" id="password" name="password" required />
+              <br /><br /><br /><br />
+            </div>
+            <img class="line-box" src="../images/line.svg" alt="line" />
+          </div>
+
+          <div class="buttons-grid">
+            <input type="submit" value="Log-in" class="btn-login" />
+            <button type="button" class="btn-signup" id="btn-signup">
+              Sign-up
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer"></footer>
+
+    <!-- scripts -->
+    <script src="../scripts/register_login/login.js"></script>
+  </body>
+</html>
