@@ -167,7 +167,7 @@ width: 100%;
     color: var(--white);
     font-family: "Cormorant Garamond";
     font-size: var(--font-size-xs);
-    width: 100%;
+    width: 80%;
     height: 20vh;
     resize: none;
 }
