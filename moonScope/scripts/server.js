@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //Connect
-db.connect((err) => {
+const connect = db.connect((err) => {
   if (err) {
     console.log("Error connecting to Moonscope's database", err);
   } else {
@@ -27,8 +27,8 @@ db.connect((err) => {
 });
 
 // Start the server
-app.listen(port, () => {
+const start = app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
-module.exports = db;
+module.exports = [db, start, connect];

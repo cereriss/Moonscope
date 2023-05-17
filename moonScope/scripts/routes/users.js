@@ -1,19 +1,18 @@
-const db = require("./server.js");
+const server = require("../server.js");
 const express = require("express");
 const bcrypt = require("bcrypt");
+const bodyParser = require("body-parser");
 
 const app = express();
+
+//it parses the form data and adds it to the body property in the request object
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //Here there is going to be user routes
 
 //Registration
 app.post("/register", (req, res) => {
-  const { username, email, password, date, time } = req.body;
-  // Validate input
-
-  // Check if the user already exists
-  // Encrypt the password
-  // Store the user details in the database
+  const { username, email, password, date } = req.body;
 });
 
 //Login
