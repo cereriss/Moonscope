@@ -1,8 +1,6 @@
-const button = document.getElementById("getStartedbtn");
-
+const button = document.getElementById('getStartedbtn');
 let glowIntensity = 10;
 let glowDirection = 1;
-
 setInterval(function () {
   glowIntensity += glowDirection;
 
@@ -14,7 +12,7 @@ setInterval(function () {
 }, 200);
 
 function getStarted() {
-  window.location.href = "pages/login.html";
+  window.location.href = 'pages/login.html';
 }
 
-button.addEventListener("click", getStarted);
+button.addEventListener('click', getStarted);
