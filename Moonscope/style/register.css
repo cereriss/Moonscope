@@ -46,6 +46,10 @@
   width: 45%;
 }
 
+.logo-text{
+  padding-left: 2.5vw;
+}
+
 .icons-box {
   display: flex;
   flex-direction: row;
