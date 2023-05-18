@@ -1,29 +1,16 @@
-import { Controller, Get, Post, Put, Delete } from '@nestjs/common';
+import { Controller, Get, Render } from '@nestjs/common';
 
 @Controller()
 export class AppController {
-  @Get('')
-  getAllIncomeReports() {
-    return [];
-  }
+  @Get()
+  @Render('index') // Render the index.html file
+  getLandingPage() {}
 
-  @Get('')
-  getAllIncomeReports2() {
-    return [];
-  }
+  @Get('register')
+  @Render('register') // Render the registration page
+  getRegisterPage() {}
 
-  @Post('')
-  createIncomeReport() {
-    return 'Created income report';
-  }
-
-  @Put('')
-  updateIncomeReport() {
-    return 'Updated income report';
-  }
-
-  @Delete(':id')
-  deleteIncomeReport() {
-    return 'Deleted income report';
-  }
+  @Get('login')
+  @Render('login') // Render the login page
+  getLoginPage() {}
 }

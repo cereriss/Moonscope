@@ -9,25 +9,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CreateUserDto = void 0;
-const class_validator_1 = require("class-validator");
-class CreateUserDto {
-}
+exports.User = void 0;
+const typeorm_1 = require("typeorm");
+let User = class User {
+};
 __decorate([
-    (0, class_validator_1.IsString)(),
+    (0, typeorm_1.PrimaryGeneratedColumn)(),
+    __metadata("design:type", Number)
+], User.prototype, "id", void 0);
+__decorate([
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], CreateUserDto.prototype, "name", void 0);
+], User.prototype, "name", void 0);
 __decorate([
-    (0, class_validator_1.IsEmail)(),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], CreateUserDto.prototype, "email", void 0);
+], User.prototype, "email", void 0);
 __decorate([
-    (0, class_validator_1.IsString)(),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", String)
-], CreateUserDto.prototype, "password", void 0);
+], User.prototype, "password", void 0);
 __decorate([
-    (0, class_validator_1.IsDate)(),
+    (0, typeorm_1.Column)(),
     __metadata("design:type", Date)
-], CreateUserDto.prototype, "dateOfBirth", void 0);
-exports.CreateUserDto = CreateUserDto;
-//# sourceMappingURL=create-user.dto.js.map
+], User.prototype, "dateOfBirth", void 0);
+User = __decorate([
+    (0, typeorm_1.Entity)()
+], User);
+exports.User = User;
+//# sourceMappingURL=user.entity.js.map
