@@ -8,15 +8,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
+const serve_static_1 = require("@nestjs/serve-static");
+const path_1 = require("path");
+const typeorm_1 = require("@nestjs/typeorm");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const user_controller_1 = require("./user/user.controller");
 const user_service_1 = require("./user/user.service");
+const user_entity_1 = require("./user/entities/user.entity");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
-        imports: [],
+        imports: [
+            serve_static_1.ServeStaticModule.forRoot({
+                rootPath: (0, path_1.join)(__dirname, '..', 'public'),
+            }),
+            typeorm_1.TypeOrmModule.forRoot(),
+            typeorm_1.TypeOrmModule.forFeature([user_entity_1.User]),
+        ],
         controllers: [app_controller_1.AppController, user_controller_1.UserController],
         providers: [app_service_1.AppService, user_service_1.UserService],
     })

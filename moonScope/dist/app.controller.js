@@ -12,52 +12,31 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
 let AppController = class AppController {
-    getAllIncomeReports() {
-        return [];
-    }
-    getAllIncomeReports2() {
-        return [];
-    }
-    createIncomeReport() {
-        return 'Created income report';
-    }
-    updateIncomeReport() {
-        return 'Updated income report';
-    }
-    deleteIncomeReport() {
-        return 'Deleted income report';
-    }
+    getLandingPage() { }
+    getRegisterPage() { }
+    getLoginPage() { }
 };
 __decorate([
-    (0, common_1.Get)(''),
+    (0, common_1.Get)(),
+    (0, common_1.Render)('index'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
-], AppController.prototype, "getAllIncomeReports", null);
+], AppController.prototype, "getLandingPage", null);
 __decorate([
-    (0, common_1.Get)(''),
+    (0, common_1.Get)('register'),
+    (0, common_1.Render)('register'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
-], AppController.prototype, "getAllIncomeReports2", null);
+], AppController.prototype, "getRegisterPage", null);
 __decorate([
-    (0, common_1.Post)(''),
+    (0, common_1.Get)('login'),
+    (0, common_1.Render)('login'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", void 0)
-], AppController.prototype, "createIncomeReport", null);
-__decorate([
-    (0, common_1.Put)(''),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], AppController.prototype, "updateIncomeReport", null);
-__decorate([
-    (0, common_1.Delete)(':id'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], AppController.prototype, "deleteIncomeReport", null);
+], AppController.prototype, "getLoginPage", null);
 AppController = __decorate([
     (0, common_1.Controller)()
 ], AppController);

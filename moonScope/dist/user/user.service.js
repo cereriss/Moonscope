@@ -25,12 +25,11 @@ let UserService = class UserService {
     async createUser(createUserDto) {
         const { name, email, password, dateOfBirth } = createUserDto;
         const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = this.userRepository.create({
-            name,
-            email,
-            password: hashedPassword,
-            dateOfBirth,
-        });
+        const newUser = new user_entity_1.User();
+        newUser.name = name;
+        newUser.email = email;
+        newUser.password = hashedPassword;
+        newUser.dateOfBirth = dateOfBirth;
         const createdUser = await this.userRepository.save(newUser);
         return createdUser;
     }
