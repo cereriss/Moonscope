@@ -16,20 +16,20 @@ exports.UserService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
-const user_entity_1 = require("./entities/user.entity");
+const user_entity_1 = require("../entities/user.entity");
 const bcrypt = require("bcrypt");
 let UserService = class UserService {
     constructor(userRepository) {
         this.userRepository = userRepository;
     }
     async createUser(createUserDto) {
-        const { name, email, password, dateOfBirth } = createUserDto;
+        const { username, email, password, birth_date } = createUserDto;
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = new user_entity_1.User();
-        newUser.name = name;
+        newUser.username = username;
         newUser.email = email;
         newUser.password = hashedPassword;
-        newUser.dateOfBirth = dateOfBirth;
+        newUser.birth_date = birth_date;
         const createdUser = await this.userRepository.save(newUser);
         return createdUser;
     }

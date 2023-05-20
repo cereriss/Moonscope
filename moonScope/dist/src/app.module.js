@@ -15,7 +15,7 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const user_controller_1 = require("./user/user.controller");
 const user_service_1 = require("./user/user.service");
-const user_entity_1 = require("./user/entities/user.entity");
+const user_entity_1 = require("./entities/user.entity");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -29,6 +29,20 @@ AppModule = __decorate([
         ],
         controllers: [app_controller_1.AppController, user_controller_1.UserController],
         providers: [app_service_1.AppService, user_service_1.UserService],
+    }),
+    (0, common_1.Module)({
+        imports: [
+            typeorm_1.TypeOrmModule.forRoot({
+                type: 'mysql',
+                host: 'localhost',
+                port: 3306,
+                username: 'michelle',
+                password: '0987654321',
+                database: 'moonscope',
+                entities: [],
+                synchronize: true,
+            }),
+        ],
     })
 ], AppModule);
 exports.AppModule = AppModule;

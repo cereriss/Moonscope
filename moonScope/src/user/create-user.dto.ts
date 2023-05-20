@@ -2,7 +2,7 @@ import { IsString, IsEmail, IsDate } from 'class-validator';
 
 export class CreateUserDto {
   @IsString()
-  readonly name: string;
+  readonly username: string;
 
   @IsEmail()
   readonly email: string;
@@ -11,5 +11,5 @@ export class CreateUserDto {
   readonly password: string;
 
   @IsDate()
-  readonly dateOfBirth: Date;
+  readonly birth_date: Date;
 }
