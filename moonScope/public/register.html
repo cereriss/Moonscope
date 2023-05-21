@@ -4,18 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="../images/favicon-white.svg"
-      media="(prefers-color-scheme: dark)"
-    />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="../images/favicon-black.svg"
-      media="(prefers-color-scheme: light)"
-    />
+    <link rel="icon" type="image/x-icon" href="../images/favicon-white.svg" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/x-icon" href="../images/favicon-black.svg" media="(prefers-color-scheme: light)">
     <link rel="stylesheet" href="../style/register.css" />
 
     <title>MoonScope</title>
@@ -69,11 +59,11 @@
 
               <!--buttons-->
               <div class="buttons-grid">
-                <button type="button" class="btn-continue" id="btn-continue">
-                  Continue
-                </button>
                 <button type="button" class="btn-login" id="btn-login">
                   Log-in
+                </button>
+                <button type="button" class="btn-continue" id="btn-continue">
+                  Continue
                 </button>
               </div>
             </form>
@@ -85,8 +75,7 @@
         <div class="title-box">When were you born?</div>
         <div class="form-box">
           <div class="container_form">
-            <form action="users/new" method="post">
-              <!--in form action mettiamo il path del controller, prima si mette la vriabile globale e poi il metodo-->
+            <form action="" method="post">
               <div class="form-grid">
                 <img class="line-box" src="../images/line.svg" alt="line" />
                 <div class="label-box">
@@ -113,6 +102,7 @@
 
               <!--buttons-->
               <div class="buttons-grid">
+                <button type="button" class="btn-login" id="btn-login">Go back</button>
                 <input type="submit" value="Submit" class="btn-continue" />
               </div>
             </form>
@@ -125,6 +115,6 @@
     <footer class="footer"></footer>
 
     <!--Scripts-->
-    <script src="./scripts/aniamtions.js"></script>
+    <script src="../scripts/aniamtions.js"></script>
   </body>
 </html>
