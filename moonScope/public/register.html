@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon-white.svg" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/x-icon" href="../images/favicon-black.svg" media="(prefers-color-scheme: light)">
+    <link rel="stylesheet" href="../style/register.css" />
+
+    <title>MoonScope</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-box">
+        <img src="../images/logo.png" alt="Logo" class="logo-banner" />
+        <div class="logo-text">Moonscope</div>
+      </div>
+      <div class="icons-box"></div>
+    </header>
+
+    <div class="scrollable-wrapper">
+      <div class="scrollable" id="firstSection">
+        <!-- Main -->
+        <div class="title-box">Register</div>
+
+        <div class="form-box">
+          <div class="container_form">
+            <form action="" method="post">
+              <div class="form-grid">
+                <img class="line-box" src="../images/line.svg" alt="line" />
+                <div class="label-box">
+                  <label class="label" for="username">Nome</label>
+                  <br /><br /><br /><br />
+
+                  <label class="label" for="email">Email</label>
+                  <br /><br /><br /><br />
+
+                  <label class="label" for="password">Password</label>
+                  <br /><br /><br /><br />
+                </div>
+
+                <div class="input-box">
+                  <input type="text" id="username" name="username" required />
+                  <br /><br /><br /><br />
+                  <input type="email" id="email" name="email" />
+                  <br /><br /><br /><br />
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                  />
+                  <br /><br /><br /><br />
+                </div>
+                <img class="line-box" src="../images/line.svg" alt="line" />
+              </div>
+
+              <!--buttons-->
+              <div class="buttons-grid">
+                <button type="button" class="btn-login" id="btn-login">
+                  Log-in
+                </button>
+                <button type="button" class="btn-continue" id="btn-continue">
+                  Continue
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="scrollable" id="secondSection">
+        <div class="title-box">When were you born?</div>
+        <div class="form-box">
+          <div class="container_form">
+            <form action="" method="post">
+              <div class="form-grid">
+                <img class="line-box" src="../images/line.svg" alt="line" />
+                <div class="label-box">
+                  <label class="label" for="birth-date">Date</label>
+                  <br /><br /><br /><br />
+
+                  <!--<label class="label" for="email">Time</label>
+                  <br /><br /><br /><br />-->
+                </div>
+
+                <div class="input-box">
+                  <input
+                    type="date"
+                    id="birth-date"
+                    name="birth-date"
+                    required
+                  />
+                  <br /><br /><br /><br />
+                  <!--<input type="time" id="time" name="time" />
+                  <br /><br /><br /><br /> -->
+                </div>
+                <img class="line-box" src="../images/line.svg" alt="line" />
+              </div>
+
+              <!--buttons-->
+              <div class="buttons-grid">
+                <button type="button" class="btn-login" id="btn-login">Go back</button>
+                <input type="submit" value="Submit" class="btn-continue" />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer"></footer>
+
+    <!--Scripts-->
+    <script src="../scripts/aniamtions.js"></script>
+  </body>
+</html>
