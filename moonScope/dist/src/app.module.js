@@ -21,6 +21,16 @@ let AppModule = class AppModule {
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
+            typeorm_1.TypeOrmModule.forRoot({
+                type: 'mysql',
+                host: 'localhost',
+                port: 3306,
+                username: 'michelle',
+                password: '0987654321',
+                database: 'moonscope',
+                synchronize: true,
+                entities: ['dist/**/*.entity{.ts,.js}'],
+            }),
             serve_static_1.ServeStaticModule.forRoot({
                 rootPath: (0, path_1.join)(__dirname, '..', 'public'),
             }),
@@ -29,20 +39,6 @@ AppModule = __decorate([
         ],
         controllers: [app_controller_1.AppController, user_controller_1.UserController],
         providers: [app_service_1.AppService, user_service_1.UserService],
-    }),
-    (0, common_1.Module)({
-        imports: [
-            typeorm_1.TypeOrmModule.forRoot({
-                type: 'mysql',
-                host: 'localhost',
-                port: 3306,
-                username: 'michelle',
-                password: '0987654321',
-                database: 'moonscope',
-                entities: [],
-                synchronize: true,
-            }),
-        ],
     })
 ], AppModule);
 exports.AppModule = AppModule;

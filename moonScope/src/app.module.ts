@@ -10,6 +10,15 @@ import { User } from './entities/user.entity';
 
 @Module({
   imports: [
+    /* TypeOrmModule.forRoot({
+      type: 'mysql',
+      host: 'localhost',
+      port: 3306,
+      username: 'michelle',
+      password: '0987654321',
+      database: 'moonscope',
+      synchronize: true,
+    }), */
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'), // Path to your static files
     }),
@@ -18,19 +27,5 @@ import { User } from './entities/user.entity';
   ],
   controllers: [AppController, UserController],
   providers: [AppService, UserService],
-})
-@Module({
-  imports: [
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'michelle',
-      password: '0987654321',
-      database: 'moonscope',
-      entities: [],
-      synchronize: true,
-    }),
-  ],
 })
 export class AppModule {}
