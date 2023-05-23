@@ -10,5 +10,6 @@ export class AstrologyController {
     const parsedDate = new Date(birthDate);
     const horoscope = await this.astrologyService.getHoroscope(parsedDate);
     return horoscope;
+    aa;
   }
 }
