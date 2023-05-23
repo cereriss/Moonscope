@@ -31,4 +31,27 @@ export class UserService {
     // Return the created user
     return createdUser;
   }
+
+  async login(createUserDto: CreateUserDto): Promise<User> {
+    const { email, password } = createUserDto;
+
+    // Find the user by email
+    const user = await this.userRepository.findOne({ where: { email } });
+
+    // Check if the user exists
+    if (!user) {
+      throw new Error('User not found');
+    }
+
+    // Check if the password is correct
+    const isPasswordCorrect = await bcrypt.compare(password, user.password);
+
+    // Check if the password is correct
+    if (!isPasswordCorrect) {
+      throw new Error('Invalid credentials');
+    }
+
+    // Return the user
+    return user;
+  }
 }

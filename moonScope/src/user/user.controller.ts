@@ -15,4 +15,10 @@ export class UserController {
   deleteUser(@Param('id') id: string) {
     return this.userService.deleteUser(id);
   }*/
+
+  //login
+  @Post('login')
+  login(@Body() createUserDto: CreateUserDto) {
+    return this.userService.login(createUserDto);
+  }
 }
