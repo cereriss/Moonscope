@@ -1,5 +1,4 @@
 import { AppDataSource } from './data-source';
-import { User } from './entity/User';
 
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';

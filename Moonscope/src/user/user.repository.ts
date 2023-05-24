@@ -20,18 +20,6 @@ export class UserRepository {
     return createdUserId;
   }
 
-  async findUserById(id: number): Promise<User | null> {
-    const query = 'SELECT * FROM users WHERE id = ?';
-    const [rows] = await this.connection.query(query, [id]);
-    const user = rows[0];
-
-    if (!user) {
-      return null;
-    }
-
-    return user;
-  }
-
   async findUserByEmail(email: string): Promise<User | null> {
     const query = 'SELECT * FROM users WHERE email = ?';
     const [rows] = await this.connection.query(query, [email]);

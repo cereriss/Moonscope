@@ -7,7 +7,6 @@ import { AppService } from './app.service';
 import { UserController } from './user/user.controller';
 import { UserService } from './user/user.service';
 import { User } from './entities/user.entity';
-import { DataSource } from 'typeorm';
 
 @Module({
   imports: [

@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Res } from '@nestjs/common';
 import { CreateUserDto } from './create-user.dto';
 import { UserService } from './user.service';
 import { Response } from 'express';
@@ -13,7 +13,6 @@ export class UserController {
     res.redirect('./public/login.html');
   }
 
-
   //login
   @Post('login') //http://localhost:3000/users/login
   async login(@Body() createUserDto: CreateUserDto, @Res() res: Response) {
@@ -21,7 +20,9 @@ export class UserController {
     // Redirect to the desired HTML page
     res.redirect('./public/profile.html');
 
-  //diary
+    //diary
+    /*
   @Post('diary') //http://localhost:3000/users/diary
-  
+  */
+  }
 }

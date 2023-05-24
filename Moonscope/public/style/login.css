@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400&display=swap');
 
 :root {
   --black: rgba(0, 0, 0, 1);
@@ -15,11 +15,10 @@
 }
 
 * {
-  font-family: "Cormorant Garamond";
+  font-family: 'Cormorant Garamond';
   margin: 0;
   padding: 0;
   color: var(--white);
-  width: 100%;
 }
 
 .header {
@@ -46,7 +45,7 @@
   width: 45%;
 }
 
-.logo-text{
+.logo-text {
   padding-left: 2.5vw;
 }
 
@@ -67,7 +66,7 @@
   justify-content: center;
   position: relative;
 
-  font-family: "Cormorant Garamond";
+  font-family: 'Cormorant Garamond';
   font-size: var(--font-size-xl);
   color: var(--white);
 
@@ -144,7 +143,7 @@ form {
 }
 
 .label {
-  font-family: "Cormorant Garamond";
+  font-family: 'Cormorant Garamond';
   font-style: normal;
   font-weight: 300;
   font-size: var(--font-size-m);
@@ -153,9 +152,9 @@ form {
   font-weight: 300;
 }
 
-input[type="text"],
-[type="password"],
-[type="email"] {
+input[type='text'],
+[type='password'],
+[type='email'] {
   box-sizing: border-box;
 
   position: relative;
@@ -168,7 +167,7 @@ input[type="text"],
   border-bottom: 1px solid white;
   border-radius: 36px;
 
-  font-family: "Cormorant Garamond";
+  font-family: 'Cormorant Garamond';
   font-style: normal;
   font-weight: 300;
   font-size: var(--font-size-m);
@@ -194,7 +193,7 @@ input[type="text"],
   color: var(--white);
   position: relative;
   cursor: pointer;
-  font-family: "Cormorant Garamond";
+  font-family: 'Cormorant Garamond';
   font-size: var(--font-size-s);
   font-weight: 600;
   text-align: center;
@@ -215,7 +214,7 @@ input[type="text"],
   color: var(--white);
   position: relative;
   cursor: pointer;
-  font-family: "Cormorant Garamond";
+  font-family: 'Cormorant Garamond';
   font-size: var(--font-size-s);
   font-weight: 600;
   text-align: center;
@@ -257,23 +256,21 @@ input[type="text"],
 }
 
 @media only screen and (max-width: 600px) {
-
-  :root{
+  :root {
     --font-size-s: 24px;
     --font-size-m: 32px;
     --font-size-l: 48px;
     --font-size-xl: 72px;
   }
 
-  .header{
+  .header {
     height: 25vh;
-  
+
     padding-left: 0%;
-    align-items:center;
-    
+    align-items: center;
   }
 
-  .logo-box{
+  .logo-box {
     padding-top: 5vh;
     width: 100%;
     justify-content: center;
@@ -281,83 +278,79 @@ input[type="text"],
     padding-left: 0%;
   }
 
-  .icons-box{
+  .icons-box {
     display: none;
   }
 
-  .logo-text{
+  .logo-text {
     padding-left: 4vw;
     width: fit-content;
   }
 
-  .logo-banner{
+  .logo-banner {
     height: 70%;
     width: auto;
   }
 
-  .title-box{
+  .title-box {
     height: 13vh;
-    font-size: var(--font-size-l) ;
+    font-size: var(--font-size-l);
     text-align: center;
   }
 
-  .form-box{
+  .form-box {
     height: 60vh;
   }
 
-  .form-grid{
+  .form-grid {
     height: 35vh;
   }
 
   form {
     width: auto;
   }
-  
-  .line-box{
+
+  .line-box {
     display: none;
   }
 
-  .label-box{
+  .label-box {
     padding-right: 10%;
   }
 
-  .input-box{
-    
-  }
-
-  .label{
+  .label {
     font-size: var(--font-size-m);
     text-align: left;
   }
 
-input[type="text"],
-[type="password"],
-[type="email"],
-[type="date"],
-[type="time"] {
-  width: 50vw;
-  font-size: var(--font-size-m);
-}
+  input[type='text'],
+  [type='password'],
+  [type='email'],
+  [type='date'],
+  [type='time'] {
+    width: 50vw;
+    font-size: var(--font-size-m);
+  }
 
-  .buttons-grid{
+  .buttons-grid {
     height: 20vh;
     flex-direction: column;
     padding: 0;
     width: 100%;
   }
 
-  .btn-login{
+  .btn-login {
     height: 5.5vh;
     width: 50vw;
     margin-bottom: 2vh;
   }
-  
-  .btn-signup{
+
+  .btn-signup {
     height: 5.5vh;
     width: 50vw;
   }
 
-  .footer{
+  .footer {
     height: 15vh;
   }
 }
