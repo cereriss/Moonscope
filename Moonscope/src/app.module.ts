@@ -7,12 +7,11 @@ import { AppService } from './app.service';
 import { UserController } from './user/user.controller';
 import { UserService } from './user/user.service';
 import { User } from './entities/user.entity';
-import { AstrologyController } from './API/astrolgy.controller';
-import { AstrologyService } from './services/astrology.service';
+import { DataSource } from 'typeorm';
 
 @Module({
   imports: [
-    /* TypeOrmModule.forRoot({
+    TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
       port: 3306,
@@ -20,14 +19,14 @@ import { AstrologyService } from './services/astrology.service';
       password: '0987654321',
       database: 'moonscope',
       synchronize: true,
-    }), */
+      entities: ['dist/**/*.entity{.ts,.js}'],
+    }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'), // Path to your static files
     }),
-    TypeOrmModule.forRoot(), // Your TypeORM configuration
     TypeOrmModule.forFeature([User]),
   ],
-  controllers: [AppController, UserController, AstrologyController],
-  providers: [AppService, UserService, AstrologyService],
+  controllers: [AppController, UserController],
+  providers: [AppService, UserService],
 })
 export class AppModule {}
