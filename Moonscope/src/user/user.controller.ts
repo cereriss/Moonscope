@@ -21,5 +21,7 @@ export class UserController {
     // Redirect to the desired HTML page
     res.redirect('./public/profile.html');
 
-
+  //diary
+  @Post('diary') //http://localhost:3000/users/diary
+  
 }
