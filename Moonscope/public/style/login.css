@@ -19,6 +19,7 @@
   margin: 0;
   padding: 0;
   color: var(--white);
+  width: 100%;
 }
 
 .header {
@@ -252,5 +253,111 @@ input[type="text"],
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  :root{
+    --font-size-s: 24px;
+    --font-size-m: 32px;
+    --font-size-l: 48px;
+    --font-size-xl: 72px;
+  }
+
+  .header{
+    height: 25vh;
+  
+    padding-left: 0%;
+    align-items:center;
+    
+  }
+
+  .logo-box{
+    padding-top: 5vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0%;
+  }
+
+  .icons-box{
+    display: none;
+  }
+
+  .logo-text{
+    padding-left: 4vw;
+    width: fit-content;
+  }
+
+  .logo-banner{
+    height: 70%;
+    width: auto;
+  }
+
+  .title-box{
+    height: 13vh;
+    font-size: var(--font-size-l) ;
+    text-align: center;
+  }
+
+  .form-box{
+    height: 60vh;
+  }
+
+  .form-grid{
+    height: 35vh;
+  }
+
+  form {
+    width: auto;
+  }
+  
+  .line-box{
+    display: none;
+  }
+
+  .label-box{
+    padding-right: 10%;
+  }
+
+  .input-box{
+    
+  }
+
+  .label{
+    font-size: var(--font-size-m);
+    text-align: left;
+  }
+
+input[type="text"],
+[type="password"],
+[type="email"],
+[type="date"],
+[type="time"] {
+  width: 50vw;
+  font-size: var(--font-size-m);
+}
+
+  .buttons-grid{
+    height: 20vh;
+    flex-direction: column;
+    padding: 0;
+    width: 100%;
+  }
+
+  .btn-login{
+    height: 5.5vh;
+    width: 50vw;
+    margin-bottom: 2vh;
+  }
+  
+  .btn-signup{
+    height: 5.5vh;
+    width: 50vw;
+  }
+
+  .footer{
+    height: 15vh;
   }
 }

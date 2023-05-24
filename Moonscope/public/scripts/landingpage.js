@@ -12,7 +12,7 @@ setInterval(function () {
 }, 200);
 
 function getStarted() {
-  window.location.href = 'pages/login.html';
+  window.location.href = './login.html';
 }
 
 button.addEventListener('click', getStarted);

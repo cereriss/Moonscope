@@ -166,3 +166,80 @@ footer {
     transform: scale(1);
   }
 }
+
+@media only screen and (max-width: 600px) {
+
+  :root{
+    --font-size-s: 24px;
+    --font-size-m: 32px;
+    --font-size-l: 48px;
+    --font-size-xl: 72px;
+  }
+
+  .header {
+    
+    height: 35vh;
+  }
+
+  .landing-title {
+    font-size: var(--font-size-l);
+    text-align: center;
+  }
+
+  .body-A {
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-frame {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: 55%;
+  }
+
+  .btn-frame {
+    height: 20vh;
+  }
+
+  .getStartedbtn {
+    height:6vh;
+    width: 50vw;
+  }
+
+  .body-B {
+    height: fit-content;
+  }
+
+  .title-space {
+    font-size: var(--font-size-l);
+    height: 10vh;
+  }
+
+  .box-grid {
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    
+  }
+
+  .line-box {
+    width: 100vw;
+    height: fit-content;
+  }
+
+  .desc-box {
+    font-size: var(--font-size-s);
+    width: 80vw;
+    height: fit-content;
+  }
+
+  footer {
+    height: 20vh;
+    align-items: center;
+  }
+}
