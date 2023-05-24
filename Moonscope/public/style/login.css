@@ -243,6 +243,16 @@ input[type='text'],
   background-blend-mode: saturation;
 }
 
+.body-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  background-color: var(--violaScuro);
+  font-size: var(--font-size-xl);
+}
+
 @keyframes bottone {
   0% {
     transform: scale(1);

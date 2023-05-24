@@ -17,4 +17,8 @@ export class AppController {
   @Get('profile')
   @Render('profile') // Render the profile page
   getProfilePage() {}
+
+  @Get('registered')
+  @Render('registered') // Render the registered page
+  getRegisteredPage() {}
 }

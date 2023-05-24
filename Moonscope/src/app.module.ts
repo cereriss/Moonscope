@@ -18,7 +18,7 @@ import { User } from './entities/user.entity';
       password: '0987654321',
       database: 'moonscope',
       synchronize: true,
-      entities: ['dist/**/*.entity{.ts,.js}'],
+      entities: [__dirname + '/../**/*.entity.{js,ts}'],
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'), // Path to your static files

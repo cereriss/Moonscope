@@ -33,10 +33,10 @@ export class UserService {
   }
 
   async login(createUserDto: CreateUserDto): Promise<User> {
-    const { email, password } = createUserDto;
+    const { username, password } = createUserDto;
 
     // Find the user by email
-    const user = await this.userRepository.findOne({ where: { email } });
+    const user = await this.userRepository.findOne({ where: { username } });
 
     // Check if the user exists
     if (!user) {
@@ -68,5 +68,4 @@ export class UserService {
     // Return the created diary
     return createdDiary;
   }*/
-
 }

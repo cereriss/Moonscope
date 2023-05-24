@@ -10,15 +10,14 @@ export class UserController {
   @Post('new') //http://localhost:3000/users/new
   async createUser(@Body() createUserDto: CreateUserDto, @Res() res: Response) {
     await this.userService.createUser(createUserDto);
-    res.redirect('./public/login.html');
+    res.redirect('../public/registered.html');
   }
 
   //login
   @Post('login') //http://localhost:3000/users/login
   async login(@Body() createUserDto: CreateUserDto, @Res() res: Response) {
     await this.userService.login(createUserDto);
-    // Redirect to the desired HTML page
-    res.redirect('./public/profile.html');
+    res.redirect('../public/profile.html');
 
     //diary
     /*

@@ -8,7 +8,7 @@ export class UserRepository {
 
   async createUser(user: User): Promise<User> {
     const query =
-      'INSERT INTO utenti (username, email, password, birth_date) VALUES (?, ?, ?, ?)';
+      'INSERT INTO user (username, email, password, birth_date) VALUES (?, ?, ?, ?)';
     const [result] = await this.connection.query(query, [
       user.username,
       user.email,
@@ -20,9 +20,9 @@ export class UserRepository {
     return createdUserId;
   }
 
-  async findUserByEmail(email: string): Promise<User | null> {
-    const query = 'SELECT * FROM users WHERE email = ?';
-    const [rows] = await this.connection.query(query, [email]);
+  async findUserByUsername(username: string): Promise<User | null> {
+    const query = 'SELECT * FROM users WHERE username = ?';
+    const [rows] = await this.connection.query(query, [username]);
     const user = rows[0];
 
     if (!user) {
