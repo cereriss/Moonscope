@@ -54,4 +54,19 @@ export class UserService {
     // Return the user
     return user;
   }
+
+  /*async diary(createDiaryDto: CreateDiaryDto): Promise<Diary> {
+    const { content } = createDiaryDto;
+
+    // Create a new diary entity
+    const newDiary = new Diary();
+    newDiary.content = content;
+
+    // Save the new diary to the database
+    const createdDiary = await this.diaryRepository.save(newDiary);
+
+    // Return the created diary
+    return createdDiary;
+  }*/
+
 }
