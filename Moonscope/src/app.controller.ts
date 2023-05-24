@@ -13,4 +13,8 @@ export class AppController {
   @Get('login')
   @Render('login') // Render the login page
   getLoginPage() {}
+
+  @Get('profile')
+  @Render('profile') // Render the profile page
+  getProfilePage() {}
 }

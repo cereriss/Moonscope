@@ -31,4 +31,29 @@ export class UserRepository {
 
     return user;
   }
+
+  async findUserByEmail(email: string): Promise<User | null> {
+    const query = 'SELECT * FROM users WHERE email = ?';
+    const [rows] = await this.connection.query(query, [email]);
+    const user = rows[0];
+
+    if (!user) {
+      return null;
+    }
+
+    return user;
+  }
+
+  /*
+  async postDiary(diary: Diary): Promise<Diary> {
+    const query =
+      'INSERT INTO diaries (content, user_id) VALUES (?, ?)';
+    const [result] = await this.connection.query(query, [
+      diary.content,
+      diary.user_id,
+    ]);
+    const createdDiaryId = result['insertId'];
+
+    return createdDiaryId;
+  }*/
 }
