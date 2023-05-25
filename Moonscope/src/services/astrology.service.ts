@@ -8,16 +8,22 @@ export class AstrologyService {
     this.aztro = new Aztro();
   }
 
-  async getHoroscope(birthDate: Date): Promise<string> {
-    // Format the birth date to YYYY-MM-DD
+  async getHoroscope(
+    birthDate: Date,
+    sign: string,
+  ): Promise<{ prediction: string; love: string; luck: string; work: string }> {
     const formattedDate = birthDate.toISOString().split('T')[0];
 
     // Make a request to the Aztro API
     const response = await axios.get(
-      `https://aztro.sameerkumar.website/?date=${formattedDate}&sign=aries`,
+      `https://aztro.sameerkumar.website/?date=${formattedDate}&sign=${sign}`,
     );
-
     // Return the horoscope prediction
-    return response.data.description;
+    return {
+      prediction: response.data.description,
+      love: response.data.love,
+      luck: response.data.luck,
+      work: response.data.work,
+    };
   }
 }

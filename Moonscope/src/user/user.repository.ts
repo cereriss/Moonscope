@@ -8,12 +8,13 @@ export class UserRepository {
 
   async createUser(user: User): Promise<User> {
     const query =
-      'INSERT INTO user (username, email, password, birth_date) VALUES (?, ?, ?, ?)';
+      'INSERT INTO user (username, email, password, birth_date, sign) VALUES (?, ?, ?, ?, ?)';
     const [result] = await this.connection.query(query, [
       user.username,
       user.email,
       user.password,
       user.birth_date,
+      user.sign,
     ]);
     const createdUserId = result['insertId'];
 

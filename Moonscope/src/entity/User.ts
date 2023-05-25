@@ -16,4 +16,7 @@ export class User {
 
   @Column()
   birth_date: Date;
+
+  @Column()
+  sign: string;
 }
