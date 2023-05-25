@@ -23,8 +23,8 @@ export class UserService {
     newUser.username = username;
     newUser.email = email;
     newUser.password = hashedPassword;
-    newUser.birth_date = birth_date;
-    newUser.sign = this.calulateSign(birth_date);
+    newUser.birth_date = new Date(birth_date);
+    newUser.sign = this.calulateSign(newUser.birth_date);
 
     // Save the new user to the database
     const createdUser = await this.userRepository.save(newUser);
