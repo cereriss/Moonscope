@@ -4,14 +4,14 @@ import { join } from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserController } from './user/user.controller';
-import { UserService } from './user/user.service';
 import { User } from './entities/user.entity';
-import { AstrologyController } from './API/astrology.controller';
-import { AstrologyService } from './API/astrology.service';
+import { UserModule } from './user/user.module';
+import { AstrologyModule } from './API/astrology.module';
 
 @Module({
   imports: [
+    UserModule,
+    AstrologyModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -19,7 +19,6 @@ import { AstrologyService } from './API/astrology.service';
       username: 'michelle',
       password: '0987654321',
       database: 'moonscope',
-      synchronize: true,
       entities: [__dirname + '/../**/*.entity.{js,ts}'],
     }),
     ServeStaticModule.forRoot({
@@ -27,7 +26,7 @@ import { AstrologyService } from './API/astrology.service';
     }),
     TypeOrmModule.forFeature([User]),
   ],
-  controllers: [AppController, UserController, AstrologyController],
-  providers: [AppService, UserService, AstrologyService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}

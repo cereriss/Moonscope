@@ -42,29 +42,29 @@ export class UserService {
 
     //sign calculation logic
     if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
-      sign = 'Capricorn';
+      sign = 'capricorn';
     } else if ((month == 1 && day >= 21) || (month == 2 && day <= 18)) {
-      sign = 'Aquarius';
+      sign = 'aquarius';
     } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
-      sign = 'Pisces';
+      sign = 'pisces';
     } else if ((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
-      sign = 'Aries';
+      sign = 'aries';
     } else if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
       sign = 'taurus';
     } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
-      sign = 'Gemini';
+      sign = 'gemini';
     } else if ((month == 6 && day >= 22) || (month == 7 && day <= 22)) {
-      sign = 'Cancer';
+      sign = 'cancer';
     } else if ((month == 7 && day >= 23) || (month == 8 && day <= 23)) {
-      sign = 'Leo';
+      sign = 'leo';
     } else if ((month == 8 && day >= 24) || (month == 9 && day <= 23)) {
-      sign = 'Virgo';
+      sign = 'virgo';
     } else if ((month == 9 && day >= 24) || (month == 10 && day <= 23)) {
-      sign = 'Libra';
+      sign = 'libra';
     } else if ((month == 10 && day >= 24) || (month == 11 && day <= 22)) {
-      sign = 'Scorpio';
+      sign = 'scorpio';
     } else if ((month == 11 && day >= 23) || (month == 12 && day <= 21)) {
-      sign = 'Sagittarius';
+      sign = 'sagittarius';
     }
 
     return sign;

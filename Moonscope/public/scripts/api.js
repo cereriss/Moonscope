@@ -3,7 +3,9 @@ const username = queryParams.get('username');
 console.log(username);
 
 function getHoroscope() {
-  fetch(`astrology/horoscope/${username}`)
+  fetch(`astrology/horoscope/${username}`, {
+    method: 'POST',
+  })
     .then((response) => {
       console.log(response);
       return response.json();
@@ -22,3 +24,6 @@ function getHoroscope() {
 }
 
 getHoroscope();
+
+//update username in the title
+document.getElementById('userName').textContent = 'Hi ' + username + '!';

@@ -34,10 +34,10 @@
     <!--schermata 1-->
     <div class="content-box">
       <div class="horoscope-box">
-        <div class="title-box" id="userName">Hi user!</div>
+        <div class="title-box fade-in" id="userName">Hi user!</div>
         <div class="today-box">
-          <div class="today">TODAY</div>
-          <div class="horoscope" id="prediction">
+          <div class="today fade-in">TODAY</div>
+          <div class="horoscope fade-in" id="prediction">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             luctus dui erat, at interdum enim luctus ut. Vestibulum magna leo,
             sodales at placerat id, feugiat non mauris. Duis ornare orci turpis,
@@ -50,22 +50,22 @@
           </div>
           <div class="sections-box">
             <div class="section">
-              <div class="emoji" id="luckPrediction">🍀</div>
-              <div class="text">
+              <div class="emoji fade-in" id="luckPrediction">🍀</div>
+              <div class="text fade-in">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Curabitur ullamcorper a urna vel scelerisque.
               </div>
             </div>
             <div class="section">
-              <div class="emoji" id="lovePrediction">❤️</div>
-              <div class="text">
+              <div class="emoji fade-in" id="lovePrediction">❤️</div>
+              <div class="text fade-in">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Curabitur ullamcorper a urna vel scelerisque.
               </div>
             </div>
             <div class="section">
-              <div class="emoji" id="workPrediction">💼</div>
-              <div class="text">
+              <div class="emoji fade-in" id="workPrediction">💼</div>
+              <div class="text fade-in">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Curabitur ullamcorper a urna vel scelerisque.
               </div>
@@ -75,17 +75,17 @@
       </div>
 
       <div class="buttons-grid">
-        <a href="" class="btn-diary">Diary</a>
+        <a href="" class="btn-diary fade-in">Diary</a>
         <button type="button" class="btn-write" id="btn-write">Write</button>
       </div>
 
-      <img class="line-box" src="./images/line.svg" alt="line" />
+      <img class="line-box fade-in" src="./images/line.svg" alt="line" />
 
-      <div class="prompt-box">
-        <div class="above-box">
+      <div class="prompt-box fade-in">
+        <div class="above-box fade-in">
           Curabitur ullamcorper a urna vel scelerisque?
         </div>
-        <div class="among-box">
+        <div class="among-box fade-in">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
           ullamcorper a urna vel scelerisque
         </div>
@@ -104,15 +104,17 @@
 
     <!--tasto per scendere-->
     <div class="scroll-box">
-      <a href="#diary"><button type="button" class="btn-scroll">↓</button></a>
+      <a href="#diary"
+        ><button type="button" class="btn-scroll fade-in">↓</button></a
+      >
     </div>
     <!--schermata 2-->
     <div class="title2-box" id="diary">Diary</div>
     <div class="diary-box">
-      <div class="above1-box">
+      <div class="above1-box fade-in">
         Curabitur ullamcorper a urna vel scelerisque?
       </div>
-      <div class="among1-box">
+      <div class="among1-box fade-in">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
         ullamcorper a urna vel scelerisque
       </div>
@@ -134,6 +136,7 @@
     <script>
       let userSign = '<%= userSign %> ';
     </script>
-    <script src="scripts/api.js"></script>
+    <script src="scripts/fadein.js" type="module"></script>
+    <script src="scripts/api.js" type="module"></script>
   </body>
 </html>

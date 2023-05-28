@@ -6,10 +6,7 @@ import { AstrologyService } from '../API/astrology.service';
 
 @Controller('users') //http://localhost:3000/users
 export class UserController {
-  constructor(
-    private readonly userService: UserService,
-    private readonly astrologyService: AstrologyService,
-  ) {}
+  constructor(private readonly userService: UserService) {}
 
   @Post('new') //http://localhost:3000/users/new
   async createUser(@Body() createUserDto: CreateUserDto, @Res() res: Response) {

@@ -12,8 +12,7 @@ export class AstrologyService {
     // Make a request to the astrology API
 
     const response = await axios
-      // .get(`https://ohmanda.com/api/horoscope/${sign}`)
-      .get(`https://ohmanda.com/api/horoscope/taurus`)
+      .get(`https://ohmanda.com/api/horoscope/${sign}`)
       .then((response) => {
         return {
           horoscope: response.data.horoscope,

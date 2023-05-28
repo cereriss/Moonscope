@@ -8,6 +8,5 @@ export const AppDataSource = new DataSource({
   username: 'michelle',
   password: '0987654321',
   database: 'moonscope',
-  synchronize: true,
   entities: ['dist/**/*.entity{.ts,.js}'],
 });
