@@ -50,7 +50,7 @@ export class UserService {
     } else if ((month == 3 && day >= 21) || (month == 4 && day <= 20)) {
       sign = 'Aries';
     } else if ((month == 4 && day >= 21) || (month == 5 && day <= 20)) {
-      sign = 'Taurus';
+      sign = 'taurus';
     } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
       sign = 'Gemini';
     } else if ((month == 6 && day >= 22) || (month == 7 && day <= 22)) {

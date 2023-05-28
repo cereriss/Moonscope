@@ -4,7 +4,11 @@ console.log(username);
 
 function getHoroscope() {
   fetch(`astrology/horoscope/${username}`)
-    .then((response) => response.json())
+    .then((response) => {
+      console.log(response);
+      return response.json();
+    })
+
     .then((data) => {
       // Handle the response data
       console.log(data);

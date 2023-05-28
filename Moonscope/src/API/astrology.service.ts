@@ -10,8 +10,10 @@ export class AstrologyService {
     //const formattedDate = birthDate.toISOString().split('T')[0];
 
     // Make a request to the astrology API
+
     const response = await axios
-      .get(`https://ohmanda.com/api/horoscope/${sign}`)
+      // .get(`https://ohmanda.com/api/horoscope/${sign}`)
+      .get(`https://ohmanda.com/api/horoscope/taurus`)
       .then((response) => {
         return {
           horoscope: response.data.horoscope,
