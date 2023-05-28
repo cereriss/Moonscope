@@ -2,10 +2,14 @@ import { Controller, Post, Body, Res } from '@nestjs/common';
 import { CreateUserDto } from './create-user.dto';
 import { UserService } from './user.service';
 import { Response } from 'express';
+import { AstrologyService } from '../API/astrology.service';
 
 @Controller('users') //http://localhost:3000/users
 export class UserController {
-  constructor(private readonly userService: UserService) {}
+  constructor(
+    private readonly userService: UserService,
+    private readonly astrologyService: AstrologyService,
+  ) {}
 
   @Post('new') //http://localhost:3000/users/new
   async createUser(@Body() createUserDto: CreateUserDto, @Res() res: Response) {
@@ -13,15 +17,13 @@ export class UserController {
     res.redirect('../registered.html');
   }
 
-  //login
-  @Post('login') //http://localhost:3000/users/login
+  // login
+  @Post('login') // http://localhost:3000/users/login
   async login(@Body() createUserDto: CreateUserDto, @Res() res: Response) {
     await this.userService.login(createUserDto);
-    res.redirect('../profile.html');
 
-    //diary
-    /*
-  @Post('diary') //http://localhost:3000/users/diary
-  */
+    const username = createUserDto.username;
+
+    res.redirect(`../profile.html?username=${encodeURIComponent(username)}`);
   }
 }

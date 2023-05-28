@@ -93,17 +93,51 @@ export class UserService {
     return user;
   }
 
-  /*async diary(createDiaryDto: CreateDiaryDto): Promise<Diary> {
-    const { content } = createDiaryDto;
+  async getUsername(username: string): Promise<User> {
+    const user = await this.userRepository.findOne({ where: { username } });
 
-    // Create a new diary entity
-    const newDiary = new Diary();
-    newDiary.content = content;
+    // Check if the user exists
+    if (!user) {
+      throw new Error('User not found');
+    }
 
-    // Save the new diary to the database
-    const createdDiary = await this.diaryRepository.save(newDiary);
+    // Return the user
+    return user;
+  }
 
-    // Return the created diary
-    return createdDiary;
-  }*/
+  async getBirthDate(birth_date: Date): Promise<Date> {
+    const user = await this.userRepository.findOne({ where: { birth_date } });
+
+    // Check if the user exists
+    if (!user) {
+      throw new Error('User not found');
+    }
+
+    // Return the user's birth date
+    return user.birth_date;
+  }
+
+  async getSign(sign: string): Promise<string> {
+    const user = await this.userRepository.findOne({ where: { sign } });
+
+    // Check if the user exists
+    if (!user) {
+      throw new Error('User not found');
+    }
+
+    // Return the user
+    return user.sign;
+  }
+
+  async getHoroscope(sign: string): Promise<User[]> {
+    const users = await this.userRepository.find({ where: { sign } });
+
+    // Check if the user exists
+    if (!users) {
+      throw new Error('User not found');
+    }
+
+    // Return the user
+    return users;
+  }
 }

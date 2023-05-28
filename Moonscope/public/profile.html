@@ -4,8 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="./images/favicon-white.svg" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/x-icon" href="./images/favicon-black.svg" media="(prefers-color-scheme: light)">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./images/favicon-white.svg"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./images/favicon-black.svg"
+      media="(prefers-color-scheme: light)"
+    />
     <link rel="stylesheet" href="./style/profile.css" />
     <title>Moonscope</title>
   </head>
@@ -24,10 +34,10 @@
     <!--schermata 1-->
     <div class="content-box">
       <div class="horoscope-box">
-        <div class="title-box">Hi user!</div>
+        <div class="title-box" id="userName">Hi user!</div>
         <div class="today-box">
           <div class="today">TODAY</div>
-          <div class="horoscope">
+          <div class="horoscope" id="mainPrediction">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             luctus dui erat, at interdum enim luctus ut. Vestibulum magna leo,
             sodales at placerat id, feugiat non mauris. Duis ornare orci turpis,
@@ -40,21 +50,21 @@
           </div>
           <div class="sections-box">
             <div class="section">
-              <div class="emoji">🍀</div>
+              <div class="emoji" id="luckPrediction">🍀</div>
               <div class="text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Curabitur ullamcorper a urna vel scelerisque.
               </div>
             </div>
             <div class="section">
-              <div class="emoji">❤️</div>
+              <div class="emoji" id="lovePrediction">❤️</div>
               <div class="text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Curabitur ullamcorper a urna vel scelerisque.
               </div>
             </div>
             <div class="section">
-              <div class="emoji">💼</div>
+              <div class="emoji" id="workPrediction">💼</div>
               <div class="text">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Curabitur ullamcorper a urna vel scelerisque.
@@ -66,9 +76,7 @@
 
       <div class="buttons-grid">
         <a href="" class="btn-diary">Diary</a>
-        <button type="button" class="btn-write" id="btn-write">
-          Write
-        </button>
+        <button type="button" class="btn-write" id="btn-write">Write</button>
       </div>
 
       <img class="line-box" src="./images/line.svg" alt="line" />
@@ -82,8 +90,14 @@
           ullamcorper a urna vel scelerisque
         </div>
         <div class="below-box">
-          <textarea class="textarea" id="prompt-input" name="prompt-input"></textarea>
-          <button class="invio"><img class="img-invio" src="./images/invio.svg"></button>
+          <textarea
+            class="textarea"
+            id="prompt-input"
+            name="prompt-input"
+          ></textarea>
+          <button class="invio">
+            <img class="img-invio" src="./images/invio.svg" />
+          </button>
         </div>
       </div>
     </div>
@@ -95,18 +109,31 @@
     <!--schermata 2-->
     <div class="title2-box" id="diary">Diary</div>
     <div class="diary-box">
-      <div class="above1-box">Curabitur ullamcorper a urna vel scelerisque?</div>
+      <div class="above1-box">
+        Curabitur ullamcorper a urna vel scelerisque?
+      </div>
       <div class="among1-box">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
         ullamcorper a urna vel scelerisque
       </div>
       <div class="below1-box">
-        <textarea class="textarea" id="prompt-input" name="prompt-input"></textarea>
-        <button class="invio1"><img class="img-invio" src="./images/invio.svg"></button>
+        <textarea
+          class="textarea"
+          id="prompt-input"
+          name="prompt-input"
+        ></textarea>
+        <button class="invio1">
+          <img class="img-invio" src="./images/invio.svg" />
+        </button>
       </div>
     </div>
     <!-- Footer -->
     <footer class="footer"></footer>
 
+    <!-- Script -->
+    <script>
+      let userSign = '<%= userSign %> ';
+    </script>
+    <script src="scripts/api.js"></script>
   </body>
 </html>

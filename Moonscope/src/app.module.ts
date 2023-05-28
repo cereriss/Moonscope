@@ -7,6 +7,8 @@ import { AppService } from './app.service';
 import { UserController } from './user/user.controller';
 import { UserService } from './user/user.service';
 import { User } from './entities/user.entity';
+import { AstrologyController } from './API/astrology.controller';
+import { AstrologyService } from './API/astrology.service';
 
 @Module({
   imports: [
@@ -25,7 +27,7 @@ import { User } from './entities/user.entity';
     }),
     TypeOrmModule.forFeature([User]),
   ],
-  controllers: [AppController, UserController],
-  providers: [AppService, UserService],
+  controllers: [AppController, UserController, AstrologyController],
+  providers: [AppService, UserService, AstrologyService],
 })
 export class AppModule {}

@@ -12,4 +12,7 @@ export class CreateUserDto {
 
   @IsDate()
   readonly birth_date: Date;
+
+  @IsString()
+  readonly sign: string;
 }
