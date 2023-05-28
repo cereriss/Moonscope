@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Post, Param } from '@nestjs/common';
 import { UserService } from '../user/user.service';
 import { AstrologyService } from './astrology.service';
 
@@ -9,13 +9,13 @@ export class AstrologyController {
     private readonly userService: UserService,
   ) {}
 
-  @Get('horoscope/:username') // http://localhost:3000/astrology/horoscope/:username
+  @Post('horoscope/:username') // http://localhost:3000/astrology/horoscope/:username
   async getHoroscope(@Param('username') username: string) {
     const user = await this.userService.getUsername(username);
-    const birthDate = user.birth_date;
+
     const sign = user.sign;
 
-    const horoscope = await this.astrologyService.getHoroscope(birthDate, sign);
+    const horoscope = await this.astrologyService.getHoroscope(sign);
 
     return horoscope;
   }

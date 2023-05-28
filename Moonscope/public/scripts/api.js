@@ -9,10 +9,7 @@ function getHoroscope() {
       // Handle the response data
       console.log(data);
       // Update the HTML elements with the received data
-      document.getElementById('prediction').textContent = data.prediction;
-      document.getElementById('love').textContent = data.love;
-      document.getElementById('luck').textContent = data.luck;
-      document.getElementById('work').textContent = data.work;
+      document.getElementById('prediction').textContent = data.horoscope;
     })
     .catch((error) => {
       // Handle any errors

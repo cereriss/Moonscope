@@ -1,5 +1,4 @@
 import { AppDataSource } from './data-source';
-
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as express from 'express';
