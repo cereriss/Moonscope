@@ -24,7 +24,7 @@
 
 .header {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   position: relative;
 
@@ -53,11 +53,22 @@
 .icons-box {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  align-items: right;
+  justify-content: right;
   position: relative;
 
   width: 50%;
+}
+.logout{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: right;
+}
+
+.logout-icon{
+  width: 25%;
+  height: 50%;
 }
 
 .title-box {
@@ -338,6 +349,10 @@
   background-blend-mode: saturation;
 }
 
+.logout-icon-f{
+  visibility: hidden;
+}
+
 .fade-in {
   opacity: 0;
   transition: opacity 0.8s ease-in-out;
@@ -476,4 +491,23 @@
   .footer {
     height: 15vh;
   }
+
+  .logout-icon-f{
+    visibility: visible;
+    width: 15%;
+    height: 40%;
+    padding-bottom:5vh ;
+  }
 }
+
+
+3èào4 fuikefeyikefilkeyv ciao sofia ukjry3yr834o236r82345
+52435t43g+ellipse+bfb
+::-webkit-validation-bubble-headingb
+videod
+hbm
+hb
+
+n
+g4wne
+gng 
