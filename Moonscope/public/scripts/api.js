@@ -24,6 +24,5 @@ function getHoroscope() {
 }
 
 getHoroscope();
-
 //update username in the title
 document.getElementById('userName').textContent = 'Hi ' + username + '!';

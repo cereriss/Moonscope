@@ -108,29 +108,36 @@
 
     <!--tasto per scendere-->
     <div class="scroll-box">
-      <a href="#diary"
-        ><button type="button" class="btn-scroll fade-in">↓</button></a
+      <button
+        type="button"
+        class="btn-scroll fade-in"
+        id="btn-scroll"
+        onclick="scrollToDiary()"
       >
+        ↓
+      </button>
     </div>
     <!--schermata 2-->
-    <div class="title2-box" id="diary">Diary</div>
-    <div class="diary-box">
-      <div class="above1-box fade-in">
-        Curabitur ullamcorper a urna vel scelerisque?
-      </div>
-      <div class="among1-box fade-in">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-        ullamcorper a urna vel scelerisque
-      </div>
-      <div class="below1-box">
-        <textarea
-          class="textarea"
-          id="prompt-input"
-          name="prompt-input"
-        ></textarea>
-        <button class="invio1">
-          <img class="img-invio" src="./images/invio.svg" />
-        </button>
+    <div class="section2" id="diary">
+      <div class="title2-box">Diary</div>
+      <div class="diary-box">
+        <div class="above1-box fade-in">
+          Curabitur ullamcorper a urna vel scelerisque?
+        </div>
+        <div class="among1-box fade-in">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+          ullamcorper a urna vel scelerisque
+        </div>
+        <div class="below1-box">
+          <textarea
+            class="textarea"
+            id="prompt-input"
+            name="prompt-input"
+          ></textarea>
+          <button class="invio1">
+            <img class="img-invio" src="./images/invio.svg" />
+          </button>
+        </div>
       </div>
     </div>
     <!-- Footer -->
@@ -144,5 +151,12 @@
     </script>
     <script src="scripts/fadein.js" type="module"></script>
     <script src="scripts/api.js" type="module"></script>
+    <script>
+      // Function to scroll to the "Diary" section
+      function scrollToDiary() {
+        const diarySection = document.getElementById('diary');
+        diarySection.scrollIntoView({ behavior: 'smooth' });
+      }
+    </script>
   </body>
 </html>
