@@ -9,7 +9,6 @@ body{
 body{
   visibility: visible;
 }
-}
 
 :root {
   --black: rgba(0, 0, 0, 1);
@@ -216,4 +215,4 @@ width: fit-content;
     background: linear-gradient(180deg, #2a173c 23.98%, #000000 100%);
     background-blend-mode: saturation;
   }
-}   
+}  
