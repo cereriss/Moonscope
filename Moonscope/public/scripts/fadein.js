@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   const elements = document.querySelectorAll('.fade-in');
-  const animationDuration = 500; // Duration of the animation in milliseconds
-  const delayBetweenElements = 200; // Delay between each element in milliseconds
+  const animationDuration = 300; // Duration of the animation in milliseconds
+  const delayBetweenElements = 100; // Delay between each element in milliseconds
 
   function fadeIn(element) {
     element.style.opacity = 0;

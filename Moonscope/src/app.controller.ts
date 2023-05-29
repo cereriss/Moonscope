@@ -21,4 +21,8 @@ export class AppController {
   @Get('registered')
   @Render('registered') // Render the registered page
   getRegisteredPage() {}
+
+  @Get('diary')
+  @Render('diary') // Render the diary page
+  getDiaryPage() {}
 }
