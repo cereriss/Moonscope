@@ -147,25 +147,12 @@ footer {
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-  position: relative;
 
   background: linear-gradient(180deg, #2a173c 23.98%, #000000 100%);
   background-blend-mode: saturation;
 
   width: 100%;
   height: 20vh;
-}
-
-a{
-  width: 15%;
-  height: 80%;
-  align-items: center;
-}
-
-.github{
-  width: 100%;
-    height: 100%;
-    padding-bottom:5vh ;
 }
 
 @keyframes bottone {
@@ -178,14 +165,6 @@ a{
   100% {
     transform: scale(1);
   }
-}
-.fade-in {
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
-}
-
-.fade-in.visible {
-  opacity: 1;
 }
 
 @media only screen and (max-width: 600px) {
