@@ -4,8 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="./images/favicon-white.svg" media="(prefers-color-scheme: dark)">
-    <link rel="icon" type="image/x-icon" href="./images/favicon-black.svg" media="(prefers-color-scheme: light)">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./images/favicon-white.svg"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./images/favicon-black.svg"
+      media="(prefers-color-scheme: light)"
+    />
     <link rel="stylesheet" href="./style/mobile-diary.css" />
     <title>Moonscope</title>
   </head>
@@ -22,32 +32,35 @@
     <!-- Main -->
 
     <div class="prompt-box">
-      
-    <div class="title-box" id="diary">Diary</div>
-        <div class="above-box">
-          Today
-        </div>
-        <div class="among-box">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          ullamcorper a urna vel scelerisque
-        </div>
-        <div class="below-box">
-          <textarea class="textarea" id="prompt-input" name="prompt-input"></textarea>
-          <button class="invio"><img class="img-invio" src="./images/invio.svg"></button>
-        </div>
+      <div class="title-box" id="diary">Diary</div>
+      <div class="above-box">Today</div>
+      <div class="among-box">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+        ullamcorper a urna vel scelerisque
       </div>
+      <form action="diary/new" method="post">
+        <div class="below-box">
+          <textarea
+            class="textarea"
+            id="prompt-input"
+            name="prompt-input"
+          ></textarea>
+          <button class="invio" type="submit">
+            <img class="img-invio" src="./images/invio.svg" />
+          </button>
+        </div>
+      </form>
     </div>
 
-      <div class="buttons-grid">
-        <!-- <a href="" class="btn-diary">home</a> -->
-        <button type="button" class="btn-write" id="btn-write">
-          Done
-        </button>
-      </div>
+    <div class="buttons-grid">
+      <!-- <a href="" class="btn-diary">home</a> -->
+      <button type="button" class="btn-write" id="btn-back">Home</button>
+    </div>
 
     <!-- Footer -->
-    <footer class="footer">
-    </footer>
+    <footer class="footer"></footer>
 
+    <!-- Script -->
+    <script src="scripts/buttons.js"></script>
   </body>
 </html>
