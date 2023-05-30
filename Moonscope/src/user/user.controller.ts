@@ -1,8 +1,7 @@
-import { Controller, Post, Body, Res } from '@nestjs/common';
+import { Controller, Post, Body, Res, Controller } from '@nestjs/common';
 import { CreateUserDto } from './create-user.dto';
 import { UserService } from './user.service';
 import { Response } from 'express';
-import { AstrologyService } from '../API/astrology.service';
 
 @Controller('users') //http://localhost:3000/users
 export class UserController {

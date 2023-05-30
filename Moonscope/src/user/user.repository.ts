@@ -32,17 +32,4 @@ export class UserRepository {
 
     return user;
   }
-
-  /*
-  async postDiary(diary: Diary): Promise<Diary> {
-    const query =
-      'INSERT INTO diaries (content, user_id) VALUES (?, ?)';
-    const [result] = await this.connection.query(query, [
-      diary.content,
-      diary.user_id,
-    ]);
-    const createdDiaryId = result['insertId'];
-
-    return createdDiaryId;
-  }*/
 }
