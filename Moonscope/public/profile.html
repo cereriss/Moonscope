@@ -132,14 +132,17 @@
           ullamcorper a urna vel scelerisque
         </div>
         <div class="below1-box">
-          <textarea
-            class="textarea"
-            id="prompt-input"
-            name="prompt-input"
-          ></textarea>
-          <button class="invio1">
-            <img class="img-invio" src="./images/invio.svg" />
-          </button>
+          <!--richiesta POST da parte dell'utente che va sulla rotta localhost:3000/diary/new-->
+          <form action="diary/new" method="post">
+            <textarea
+              class="textarea"
+              id="prompt-input"
+              name="prompt-input"
+            ></textarea>
+            <button class="invio1">
+              <img class="img-invio" src="./images/invio.svg" />
+            </button>
+          </form>
         </div>
       </div>
     </div>
