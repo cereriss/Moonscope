@@ -20,3 +20,8 @@ export class AstrologyController {
     return horoscope;
   }
 }
+
+function isMobile(userAgent: string): boolean {
+  const ua = useragent.parse(userAgent); // Parse the user agent string
+  return ua.isMobile; // Check if it's a mobile device
+}
