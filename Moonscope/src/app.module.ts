@@ -7,6 +7,8 @@ import { AppService } from './app.service';
 import { User } from './entities/user.entity';
 import { UserModule } from './user/user.module';
 import { AstrologyModule } from './API/astrology.module';
+import { DiaryController } from './diary/diary.controller';
+import { DiaryModule } from './diary/diary.module';
 
 @Module({
   imports: [
@@ -25,8 +27,9 @@ import { AstrologyModule } from './API/astrology.module';
       rootPath: join(__dirname, '..', 'public'), // Path to your static files
     }),
     TypeOrmModule.forFeature([User]),
+    DiaryModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController, DiaryController],
   providers: [AppService],
 })
 export class AppModule {}
