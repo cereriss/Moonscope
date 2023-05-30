@@ -177,7 +177,7 @@ input[type='text'],
 
 .buttons-grid {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
   background-color: var(--violaScuro);
