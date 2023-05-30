@@ -5,11 +5,14 @@ import { CreateDiaryDto } from './create-diary.dto';
 
 @Controller('diary')
 export class DiaryController {
-    constructor(private readonly diaryService: DiaryService) {}
+  constructor(private readonly diaryService: DiaryService) {}
 
-    @Post('new')
-    async createDiary(@Body() createDiaryDto: CreateDiaryDto, @Res() res: Response) {
-        await this.diaryService.createDiary(createDiaryDto);  // Modifica qui
-        res.redirect('../profile.html');
-    }
+  @Post('new')
+  async createDiary(
+    @Body() createDiaryDto: CreateDiaryDto,
+    @Res() res: Response,
+  ) {
+    await this.diaryService.createDiary(createDiaryDto); // Modifica qui
+    res.redirect('../profile.html');
+  }
 }

@@ -7,13 +7,13 @@ import { AppService } from './app.service';
 import { User } from './entities/user.entity';
 import { UserModule } from './user/user.module';
 import { AstrologyModule } from './API/astrology.module';
-import { DiaryController } from './diary/diary.controller';
 import { DiaryModule } from './diary/diary.module';
 
 @Module({
   imports: [
     UserModule,
     AstrologyModule,
+    DiaryModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -27,9 +27,8 @@ import { DiaryModule } from './diary/diary.module';
       rootPath: join(__dirname, '..', 'public'), // Path to your static files
     }),
     TypeOrmModule.forFeature([User]),
-    DiaryModule,
   ],
-  controllers: [AppController, DiaryController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
