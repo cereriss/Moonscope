@@ -200,6 +200,19 @@
   box-sizing: border-box;
 }
 
+.textarea1 {
+  background-color: var(--violaScuro);
+  border: 1px solid var(--white);
+  border-radius: 16px;
+  color: var(--white);
+  font-family: 'Cormorant Garamond';
+  font-size: var(--font-size-xs);
+  width: 100%;
+  height: 15vh;
+  resize: none;
+  box-sizing: border-box;
+}
+
 .invio {
   background-color: transparent;
   border: 0;
@@ -209,6 +222,18 @@
 }
 
 .invio:hover {
+  cursor: pointer;
+}
+
+.invio2 {
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  left: 22vw;
+  top: 65vh;
+}
+
+.invio2:hover {
   cursor: pointer;
 }
 
