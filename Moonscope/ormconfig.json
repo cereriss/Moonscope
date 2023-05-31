@@ -5,5 +5,9 @@
   "username": "michelle",
   "password": "0987654321",
   "database": "moonscope",
-  "entities": ["dist/**/*.entity{.ts,.js}"]
+  "entities": ["dist/**/*.entities{.ts,.js}"],
+  "migrations": ["src/migrations/**/*.ts"],
+  "cli": {
+    "migrationsDir": "src/migrations"
+  }
 }

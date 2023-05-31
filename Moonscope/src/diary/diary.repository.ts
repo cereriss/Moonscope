@@ -7,10 +7,10 @@ export class DiaryRepository {
   constructor(private connection: Connection) {}
 
   async createDiary(diary: Diary): Promise<Diary> {
-    const query = `INSERT INTO diary (content, user_id, date) VALUES (?, ?, NOW())`;
+    const query = `INSERT INTO diary (content, id_user, date) VALUES (?, ?, NOW())`;
     const [result] = await this.connection.execute(query, [
       diary.content,
-      diary.user_id,
+      diary.id_user,
     ]);
     const createdDiaryId = result['insertId'];
 
