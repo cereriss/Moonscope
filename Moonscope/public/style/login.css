@@ -372,4 +372,9 @@ input[type='text'],
   .footer {
     height: 15vh;
   }
+
+  .body-c {
+    text-align: center;
+  }
+
 }
