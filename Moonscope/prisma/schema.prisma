@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model diary {
+  id_diary Int      @id @default(autoincrement())
+  id_user  Int
+  content  String   @db.VarChar(255)
+  day      DateTime @db.Date
+  user     user     @relation(fields: [id_user], references: [id_utenti], onDelete: NoAction, onUpdate: NoAction, map: "id_utente")
+
+  @@index([id_user], map: "id_utente_idx")
+}
+
+model user {
+  id_utenti  Int      @id @default(autoincrement())
+  username   String   @db.VarChar(255)
+  email      String   @db.VarChar(255)
+  password   String   @db.VarChar(255)
+  birth_date DateTime @db.DateTime(0)
+  sign       String   @db.VarChar(255)
+  diary      diary[]
+}
