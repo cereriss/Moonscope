@@ -1,4 +1,4 @@
-import { MigrationInterface, QueryRunner, TableColumn, Table } from 'typeorm';
+import { MigrationInterface, QueryRunner, TableColumn, Table, TableForeignKey } from 'typeorm';
 
 export class DiaryAndUserSign1685519461201 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
@@ -11,7 +11,7 @@ export class DiaryAndUserSign1685519461201 implements MigrationInterface {
       }),
     );
 
-    // Create the 'Diary' table
+    // Create the 'Diary' table if it doesn't exist
     await queryRunner.createTable(
       new Table({
         name: 'Diary',
@@ -34,9 +34,23 @@ export class DiaryAndUserSign1685519461201 implements MigrationInterface {
         ],
       }),
     );
+
+    // Add the foreign key constraint
+    await queryRunner.createForeignKey(
+      'Diary',
+      new TableForeignKey({
+        columnNames: ['id_user'],
+        referencedTableName: 'User',
+        referencedColumnNames: ['id_utenti'],
+        onDelete: 'CASCADE',
+      }),
+    );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
+    // Drop the foreign key constraint
+    await queryRunner.dropForeignKey('Diary', 'FK_UserIdUser');
+
     // Drop the 'Diary' table
     await queryRunner.dropTable('Diary');
 
