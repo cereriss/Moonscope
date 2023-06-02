@@ -9,5 +9,5 @@ export class CreateDiaryDto {
   readonly email: string;
 
   @IsDate()
-  readonly date: Date;
+  readonly day: Date;
 }

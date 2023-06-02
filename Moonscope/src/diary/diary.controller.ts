@@ -10,9 +10,10 @@ export class DiaryController {
   @Post('new')
   async createDiary(
     @Body() createDiaryDto: CreateDiaryDto,
+    @Body('userId') userId: number,
     @Res() res: Response,
   ) {
-    await this.diaryService.createDiary(createDiaryDto); // Modifica qui
+    await this.diaryService.createDiary(createDiaryDto, userId);
     res.redirect('../profile.html');
   }
 }

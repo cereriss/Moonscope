@@ -1,46 +1,40 @@
 import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
-import { User } from '../entities/user.entity';
+import { PrismaClient, user } from '@prisma/client';
 import { CreateUserDto } from './create-user.dto';
 import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UserService {
-  constructor(
-    @InjectRepository(User)
-    private userRepository: Repository<User>,
-  ) {}
+  constructor(private prisma: PrismaClient) {}
 
-  async createUser(createUserDto: CreateUserDto): Promise<User> {
+  async createUser(createUserDto: CreateUserDto): Promise<user> {
     const { username, email, password, birth_date } = createUserDto;
 
     // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Create a new user entity
-    const newUser = new User();
-    newUser.username = username;
-    newUser.email = email;
-    newUser.password = hashedPassword;
-    newUser.birth_date = new Date(birth_date);
-    newUser.sign = this.calulateSign(newUser.birth_date);
-
-    // Save the new user to the database
-    const createdUser = await this.userRepository.save(newUser);
+    const newUser = await this.prisma.user.create({
+      data: {
+        username,
+        email,
+        password: hashedPassword,
+        birth_date: new Date(birth_date),
+        sign: this.calulateSign(new Date(birth_date)),
+      },
+    });
 
     // Return the created user
-    return createdUser;
+    return newUser;
   }
 
-  //assign the sign to the user
   private calulateSign(birth_date: Date): string {
     const month = birth_date.getMonth() + 1;
     const day = birth_date.getDate();
 
     let sign = '';
 
-    //sign calculation logic
+    // Sign calculation logic...
     if ((month == 1 && day <= 20) || (month == 12 && day >= 22)) {
       sign = 'capricorn';
     } else if ((month == 1 && day >= 21) || (month == 2 && day <= 18)) {
@@ -70,11 +64,10 @@ export class UserService {
     return sign;
   }
 
-  async login(createUserDto: CreateUserDto): Promise<User> {
-    const { username, password } = createUserDto;
-
-    // Find the user by email
-    const user = await this.userRepository.findOne({ where: { username } });
+  //login
+  async login(username: string, password: string): Promise<user> {
+    // Find the user with the specified username
+    const user = await this.prisma.user.findUnique({ where: { username } });
 
     // Check if the user exists
     if (!user) {
@@ -82,19 +75,18 @@ export class UserService {
     }
 
     // Check if the password is correct
-    const isPasswordCorrect = await bcrypt.compare(password, user.password);
+    const passwordValid = await bcrypt.compare(password, user.password);
 
-    // Check if the password is correct
-    if (!isPasswordCorrect) {
-      throw new Error('Invalid credentials');
+    if (!passwordValid) {
+      throw new Error('Invalid password');
     }
 
     // Return the user
     return user;
   }
 
-  async getUsername(username: string): Promise<User> {
-    const user = await this.userRepository.findOne({ where: { username } });
+  async getUsername(username: string): Promise<user> {
+    const user = await this.prisma.user.findUnique({ where: { username } });
 
     // Check if the user exists
     if (!user) {
@@ -105,32 +97,31 @@ export class UserService {
     return user;
   }
 
-  async getBirthDate(birth_date: Date): Promise<Date> {
-    const user = await this.userRepository.findOne({ where: { birth_date } });
+  async getBirthDate(birth_date: Date): Promise<user[]> {
+    const users = await this.prisma.user.findMany({ where: { birth_date } });
 
-    // Check if the user exists
-    if (!user) {
-      throw new Error('User not found');
+    // Check if any users were found
+    if (users.length === 0) {
+      throw new Error('No users found');
     }
 
-    // Return the user's birth date
-    return user.birth_date;
+    // Return the users with the specified birth date
+    return users;
   }
 
-  async getSign(sign: string): Promise<string> {
-    const user = await this.userRepository.findOne({ where: { sign } });
+  async getSign(sign: string): Promise<user[]> {
+    const users = await this.prisma.user.findMany({ where: { sign } });
 
-    // Check if the user exists
-    if (!user) {
-      throw new Error('User not found');
+    // Check if any users were found
+    if (users.length === 0) {
+      throw new Error('No users found');
     }
 
-    // Return the user
-    return user.sign;
+    // Return the users with the specified sign
+    return users;
   }
-
-  async getHoroscope(sign: string): Promise<User[]> {
-    const users = await this.userRepository.find({ where: { sign } });
+  async getHoroscope(sign: string): Promise<user[]> {
+    const users = await this.prisma.user.findMany({ where: { sign } });
 
     // Check if the user exists
     if (!users) {
