@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaClient, User } from '@prisma/client';
+import { PrismaClient, user } from '@prisma/client';
 import { CreateUserDto } from './create-user.dto';
 import * as bcrypt from 'bcrypt';
 
@@ -7,7 +7,7 @@ import * as bcrypt from 'bcrypt';
 export class UserService {
   constructor(private prisma: PrismaClient) {}
 
-  async createUser(createUserDto: CreateUserDto): Promise<User> {
+  async createUser(createUserDto: CreateUserDto): Promise<user> {
     const { username, email, password, birth_date } = createUserDto;
 
     // Hash the password
@@ -64,10 +64,9 @@ export class UserService {
     return sign;
   }
 
-  async login(createUserDto: CreateUserDto): Promise<User> {
-    const { username, password } = createUserDto;
-
-    // Find the user by username
+  //login
+  async login(username: string, password: string): Promise<user> {
+    // Find the user with the specified username
     const user = await this.prisma.user.findUnique({ where: { username } });
 
     // Check if the user exists
@@ -76,18 +75,17 @@ export class UserService {
     }
 
     // Check if the password is correct
-    const isPasswordCorrect = await bcrypt.compare(password, user.password);
+    const passwordValid = await bcrypt.compare(password, user.password);
 
-    // Check if the password is correct
-    if (!isPasswordCorrect) {
-      throw new Error('Invalid credentials');
+    if (!passwordValid) {
+      throw new Error('Invalid password');
     }
 
     // Return the user
     return user;
   }
 
-  async getUsername(username: string): Promise<User> {
+  async getUsername(username: string): Promise<user> {
     const user = await this.prisma.user.findUnique({ where: { username } });
 
     // Check if the user exists
@@ -99,31 +97,30 @@ export class UserService {
     return user;
   }
 
-  async getBirthDate(birth_date: Date): Promise<Date> {
-    const user = await this.prisma.user.findUnique({ where: { birth_date } });
+  async getBirthDate(birth_date: Date): Promise<user[]> {
+    const users = await this.prisma.user.findMany({ where: { birth_date } });
 
-    // Check if the user exists
-    if (!user) {
-      throw new Error('User not found');
+    // Check if any users were found
+    if (users.length === 0) {
+      throw new Error('No users found');
     }
 
-    // Return the user's birth date
-    return user.birth_date;
+    // Return the users with the specified birth date
+    return users;
   }
 
-  async getSign(sign: string): Promise<string> {
-    const user = await this.prisma.user.findUnique({ where: { sign } });
+  async getSign(sign: string): Promise<user[]> {
+    const users = await this.prisma.user.findMany({ where: { sign } });
 
-    // Check if the user exists
-    if (!user) {
-      throw new Error('User not found');
+    // Check if any users were found
+    if (users.length === 0) {
+      throw new Error('No users found');
     }
 
-    // Return the user
-    return user.sign;
+    // Return the users with the specified sign
+    return users;
   }
-
-  async getHoroscope(sign: string): Promise<User[]> {
+  async getHoroscope(sign: string): Promise<user[]> {
     const users = await this.prisma.user.findMany({ where: { sign } });
 
     // Check if the user exists

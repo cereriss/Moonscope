@@ -12,15 +12,15 @@ model diary {
   id_user  Int
   content  String   @db.VarChar(255)
   day      DateTime @db.Date
-  user     user     @relation(fields: [id_user], references: [id_utenti], onDelete: NoAction, onUpdate: NoAction, map: "id_utente")
+  user     user     @relation(fields: [id_user], references: [id_utenti], onDelete: Cascade, map: "id_utente")
 
   @@index([id_user], map: "id_utente_idx")
 }
 
 model user {
   id_utenti  Int      @id @default(autoincrement())
-  username   String   @db.VarChar(255)
-  email      String   @db.VarChar(255)
+  username   String   @unique(map: "username_UNIQUE") @db.VarChar(255)
+  email      String   @unique(map: "email_UNIQUE") @db.VarChar(255)
   password   String   @db.VarChar(255)
   birth_date DateTime @db.DateTime(0)
   sign       String   @db.VarChar(255)

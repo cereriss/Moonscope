@@ -1,13 +1,11 @@
 import { Module } from '@nestjs/common';
-import { DiaryService } from './diary.service';
 import { DiaryController } from './diary.controller';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { Diary } from '../entities/diary.entity';
+import { DiaryService } from './diary.service';
+import { PrismaClient } from '@prisma/client';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Diary])],
   controllers: [DiaryController],
-  providers: [DiaryService],
+  providers: [DiaryService, PrismaClient],
   exports: [DiaryService],
 })
 export class DiaryModule {}
