@@ -2,6 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { PrismaClient, user } from '@prisma/client';
 import { CreateUserDto } from './create-user.dto';
 import * as bcrypt from 'bcrypt';
+import { Response } from 'express';
+import * as cookie from 'cookie';
 
 @Injectable()
 export class UserService {
@@ -65,7 +67,11 @@ export class UserService {
   }
 
   //login
-  async login(username: string, password: string): Promise<user> {
+  async login(
+    username: string,
+    password: string,
+    res: Response,
+  ): Promise<user> {
     // Find the user with the specified username
     const user = await this.prisma.user.findUnique({ where: { username } });
 
@@ -80,6 +86,21 @@ export class UserService {
     if (!passwordValid) {
       throw new Error('Invalid password');
     }
+
+    // Create a session cookie
+    const sessionCookie = cookie.serialize(
+      'session',
+      user.id_utenti.toString(),
+      {
+        httpOnly: false,
+        maxAge: 86400, // Set the cookie to expire in 24 hours
+        sameSite: 'strict',
+        path: '/',
+      },
+    );
+
+    // Set the session cookie in the response
+    res.setHeader('Set-Cookie', sessionCookie);
 
     // Return the user
     return user;

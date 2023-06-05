@@ -19,7 +19,7 @@ export class UserController {
     @Body('password') password: string,
     @Res() res: Response,
   ) {
-    await this.userService.login(username, password);
+    await this.userService.login(username, password, res);
     res.redirect(`../profile.html?username=${encodeURIComponent(username)}`);
   }
 }
