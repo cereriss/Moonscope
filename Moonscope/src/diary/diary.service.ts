@@ -10,13 +10,13 @@ export class DiaryService {
     createDiaryDto: CreateDiaryDto,
     userId: number,
   ): Promise<diary> {
-    const { content, day } = createDiaryDto;
+    const { content } = createDiaryDto;
 
     const newDiary = await this.prisma.diary.create({
       data: {
         content: content,
-        day: day,
-        id_user: userId,
+        day: new Date(),
+        id_user: +userId,
       },
     });
 

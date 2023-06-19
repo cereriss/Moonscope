@@ -132,11 +132,9 @@
         <div class="below1-box">
           <!--richiesta POST da parte dell'utente che va sulla rotta localhost:3000/diary/new-->
           <form action="diary/new" method="post">
-            <textarea
-              class="textarea"
-              id="prompt-input"
-              name="prompt-input"
-            ></textarea>
+            <input type="hidden" id="id_user" name="id_user" />
+
+            <textarea class="textarea" id="content" name="content"></textarea>
             <button class="invio1" type="submit">
               <img class="img-invio" src="./images/invio.svg" />
             </button>
@@ -155,6 +153,7 @@
     </script>
     <script src="scripts/fadein.js" type="module"></script>
     <script src="scripts/api.js" type="module"></script>
+    <script src="scripts/cookie.js" type="module"></script>
     <script src="scripts/mobile.js"></script>
     <script>
       // Function to scroll to the "Diary" section

@@ -10,7 +10,7 @@ export class DiaryController {
   @Post('new')
   async createDiary(
     @Body() createDiaryDto: CreateDiaryDto,
-    @Body('userId') userId: number,
+    @Body('id_user') userId: number,
     @Res() res: Response,
   ) {
     await this.diaryService.createDiary(createDiaryDto, userId);

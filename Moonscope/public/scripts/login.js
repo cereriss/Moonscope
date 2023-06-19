@@ -1,8 +1,7 @@
-const signupbtn = document.querySelector(".btn-signup");
-
+const signupbtn = document.querySelector('.btn-signup');
 
 function signup() {
-  window.location.href = "./register.html";
+  window.location.href = './register.html';
 }
 
-signupbtn.addEventListener("click", signup);
+signupbtn.addEventListener('click', signup);

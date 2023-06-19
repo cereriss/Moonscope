@@ -1,3 +1,5 @@
+function createDiary() {}
+
 //update diary content
 function getDiary() {
   fetch(`diary/${username}`, {
