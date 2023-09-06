@@ -4,24 +4,38 @@ import axios from 'axios';
 @Injectable()
 export class AstrologyService {
   async getHoroscope(
-    //birthDate: Date,
-    sign: string,
-  ): Promise<{ horoscope: string }> {
-    //const formattedDate = birthDate.toISOString().split('T')[0];
+    s: string,
+  ): Promise<{ about: string; compatibility: string }> {
+    const rapidApiKey = process.env.RAPIDAPI_KEY;
 
-    // Make a request to the astrology API
+    if (!rapidApiKey) {
+      throw new Error('RapidAPI key is missing.');
+    }
 
-    const response = await axios
-      .get(`https://ohmanda.com/api/horoscope/${sign}`)
-      .then((response) => {
-        return {
-          horoscope: response.data.horoscope,
-        };
-      })
-      .catch((error) => {
-        // Handle any errors that occurred during the request
-        throw new Error('Failed to fetch horoscope.');
-      });
-    return response;
+    try {
+      console.log('Sending request to API with sign:', s); // Aggiunto questo log
+      const response = await axios.get(
+        `https://horoscope-astrology.p.rapidapi.com/sign?s=${s}`,
+        {
+          headers: {
+            'X-RapidAPI-Key': rapidApiKey,
+            'X-RapidAPI-Host': 'horoscope-astrology.p.rapidapi.com',
+          },
+        },
+      );
+
+      return {
+        about: response.data.about,
+        compatibility: response.data.compatibility,
+      };
+    } catch (error) {
+      if (error.response) {
+        console.error('Response Error:', error.response.status);
+      } else {
+        console.error('Request Error:', error.message);
+      }
+
+      throw new Error('Failed to fetch horoscope.');
+    }
   }
 }

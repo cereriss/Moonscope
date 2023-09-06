@@ -4,7 +4,7 @@ console.log(username);
 
 function getHoroscope() {
   fetch(`astrology/horoscope/${username}`, {
-    method: 'POST',
+    method: 'GET',
   })
     .then((response) => {
       console.log(response);
@@ -12,10 +12,15 @@ function getHoroscope() {
     })
 
     .then((data) => {
+      const about = data.about;
+      const compatibility = data.compatibility;
+
       // Handle the response data
-      console.log(data);
+      console.log(about);
+
       // Update the HTML elements with the received data
-      document.getElementById('prediction').textContent = data.horoscope;
+      document.getElementById('prediction').textContent = about;
+      document.getElementById('relationship').textContent = compatibility;
     })
     .catch((error) => {
       // Handle any errors
@@ -24,5 +29,5 @@ function getHoroscope() {
 }
 
 getHoroscope();
-//update username in the title
-document.getElementById('userName').textContent = 'Hi ' + username + '!';
+// Aggiorna il nome utente nel titolo
+document.getElementById('userName').textContent = 'Ciao ' + username + '!';
