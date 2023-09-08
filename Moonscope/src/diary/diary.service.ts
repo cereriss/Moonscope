@@ -23,24 +23,15 @@ export class DiaryService {
     return newDiary;
   }
 
-  async getDiaries(): Promise<diary[]> {
-    const diaries = await this.prisma.diary.findMany();
-
-    return diaries;
-  }
-
-  async getDiaryById(id: number): Promise<diary> {
-    const diary = await this.prisma.diary.findUnique({
+  //get user diaries (plural)
+  async getDiariesByUserId(userId: number): Promise<diary[]> {
+    const diaries = await this.prisma.diary.findMany({
       where: {
-        id_diary: id,
+        id_user: +userId,
       },
     });
 
-    if (!diary) {
-      throw new Error('Diary not found');
-    }
-
-    return diary;
+    return diaries;
   }
 
   async updateDiary(id: number, content: string): Promise<diary> {

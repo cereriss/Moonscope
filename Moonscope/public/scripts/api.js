@@ -30,4 +30,4 @@ function getHoroscope() {
 
 getHoroscope();
 // Aggiorna il nome utente nel titolo
-document.getElementById('userName').textContent = 'Ciao ' + username + '!';
+document.getElementById('userName').textContent = 'Hello ' + username + '!';
