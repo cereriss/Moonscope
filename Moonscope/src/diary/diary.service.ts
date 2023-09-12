@@ -23,11 +23,13 @@ export class DiaryService {
     return newDiary;
   }
 
-  //get user diaries (plural)
-  async getDiariesByUserId(userId: number): Promise<diary[]> {
+  //get user diaries (plural) by username
+  async getDiariesByUsername(username: string): Promise<diary[]> {
     const diaries = await this.prisma.diary.findMany({
       where: {
-        id_user: +userId,
+        user: {
+          username,
+        },
       },
     });
 

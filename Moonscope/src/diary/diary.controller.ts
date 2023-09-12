@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, Res } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Res } from '@nestjs/common';
 import { DiaryService } from './diary.service';
 import { Response } from 'express';
 import { CreateDiaryDto } from './create-diary.dto';
@@ -19,16 +19,18 @@ export class DiaryController {
 
   //fetch diary of the user
   @Get(':username')
-  async getDiariesByUsername(
-    @Body('id_user') userId: number,
+  async getDiaryByUsername(
+    @Param('username') username: string,
     @Res() res: Response,
   ) {
     try {
-      // Fetch diaries data based on the provided user ID
-      const diariesData = await this.diaryService.getDiariesByUserId(userId);
+      // Fetch diaries data based on the provided username
+      const diariesData = await this.diaryService.getDiariesByUsername(
+        username,
+      );
 
       // Return the diaries data as a JSON response
-      res.json({ diaries: diariesData });
+      res.json({ diary: diariesData });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: 'Internal Server Error' });
