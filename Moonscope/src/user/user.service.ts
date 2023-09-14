@@ -152,4 +152,9 @@ export class UserService {
     // Return the user
     return users;
   }
+
+  //logout
+  async logout(res: Response): Promise<void> {
+    res.clearCookie('session');
+  }
 }

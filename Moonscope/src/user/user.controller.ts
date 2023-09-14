@@ -22,4 +22,10 @@ export class UserController {
     await this.userService.login(username, password, res);
     res.redirect(`../profile.html?username=${encodeURIComponent(username)}`);
   }
+
+  @Post('logout') // http://localhost:3000/users/logout
+  async logout(@Res() res: Response) {
+    await this.userService.logout(res);
+    res.redirect('../index.html');
+  }
 }
