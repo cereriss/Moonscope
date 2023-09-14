@@ -14,8 +14,19 @@ function getDiary() {
     .then((data) => {
       // Handle the response data
       console.log('Data received:', data);
-      // Update the HTML elements with the received data
-      document.getElementById('diaryContent').textContent = data.diary.content;
+      const diaryEntries = data.diary;
+      const diaryContentElement = document.getElementById('diaryContent');
+
+      // Clear any existing content in the HTML element
+      diaryContentElement.innerHTML = '';
+
+      // Loop through the diary entries and append content to the HTML element
+      diaryEntries.forEach((entry) => {
+        const entryContent = entry.content;
+        const entryElement = document.createElement('p');
+        entryElement.textContent = entryContent;
+        diaryContentElement.appendChild(entryElement);
+      });
     })
     .catch((error) => {
       // Handle any errors
@@ -23,5 +34,5 @@ function getDiary() {
     });
 }
 
-// Call the function to fetch the user's diary
+// Call the function to fetch and display the user's diary
 getDiary();
