@@ -5,6 +5,5 @@ Moonscope is a web app that provides users with personalized daily horoscopes ba
 * [Mockup](https://www.figma.com/file/hVTN4FmUyLMTvFbSt89r0m/moonscope?node-id=0%3A1&t=Xz8Yas0AWCU90LqL-1)
 * [Utilized API](https://ohmanda.com/api/horoscope/)
 * [Utilized Framework](https://nestjs.com/)
-* [School links](https://iismarconi-my.sharepoint.com/:w:/g/personal/scaravaggi_sofia_04_itisdalmine_edu_it/EeizHFDAG6FNsIPqtwDTJmEBu30Dquzio-6HL_U1uKxbCg?e=DpLFpA)
 <br><br>
 ![github-logo---moonscope](https://user-images.githubusercontent.com/49374334/235768497-8c58fa34-d333-44ee-80a2-f2cef8f95597.jpg)
